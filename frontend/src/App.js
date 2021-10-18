@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import StartView from './components/StartScreen/StartView';
-import QuestionView from './components/QuestionScreen/QuestionView';
+import QuestionView from './components/QuestionScreen/QuestionView/QuestionView';
 import './App.css';
 
 const App = () => {
