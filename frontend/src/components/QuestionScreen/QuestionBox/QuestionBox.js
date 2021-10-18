@@ -1,17 +1,23 @@
 import React, {useState} from 'react'
 import QuestionChoice from '../QuestionChoice/QuestionChoice';
+import CorrectBox from '../CorrectBox/CorrectBox';
+import IncorrectBox from '../IncorrectBox/IncorrectBox';
 
 const QuestionBox = (props) => {
 
     const [choiceClass0, setChoiceClass0] = useState("");
     const [choiceClass1, setChoiceClass1] = useState("");
     const [choiceClass2, setChoiceClass2] = useState("");
+    const [showCorrect, setShowCorrect] = useState(0);
+    const [showIncorrect, setShowIncorrect] = useState(0);
 
     function choiceClickHandler(key) {
         if (props.question.correct === key) {
             console.log("This is the correct answer!")
+            setShowCorrect(true)
         } else {
             console.log("This is the incorrect answer!")
+            setShowIncorrect(true)
         }
         // Show Results
         setChoiceClass0("incorrect-choice")
@@ -60,6 +66,8 @@ const QuestionBox = (props) => {
         <div>
             <b>{props.question.title}</b>
             {question_choices}
+            { showCorrect ? <CorrectBox /> : null }
+            { showIncorrect ? <IncorrectBox /> : null }
         </div>
     );
 
