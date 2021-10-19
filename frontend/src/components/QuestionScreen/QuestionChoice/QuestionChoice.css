@@ -13,3 +13,8 @@
 .correct-choice {
     background-color: lightgreen;
 }
+
+/* https://stackoverflow.com/questions/44719980/ */
+.no-click {
+    pointer-events: none;
+ }

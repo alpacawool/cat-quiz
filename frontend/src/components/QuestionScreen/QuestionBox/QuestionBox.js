@@ -10,8 +10,23 @@ const QuestionBox = (props) => {
     const [choiceClass2, setChoiceClass2] = useState("");
     const [showCorrect, setShowCorrect] = useState(0);
     const [showIncorrect, setShowIncorrect] = useState(0);
+ 
 
-    function choiceClickHandler(key) {
+    async function choiceClickHandler(key) {
+
+        // Show Results
+        setChoiceClass0("incorrect-choice no-click")
+        setChoiceClass1("incorrect-choice no-click")
+        setChoiceClass2("incorrect-choice no-click")
+
+        if (props.question.correct === 0) {
+            setChoiceClass0("correct-choice no-click")
+        } else if (props.question.correct === 1) {
+            setChoiceClass1("correct-choice no-click")
+        } else if (props.question.correct === 2) {
+            setChoiceClass2("correct-choice no-click")
+        }
+
         if (props.question.correct === key) {
             console.log("This is the correct answer!")
             setShowCorrect(true)
@@ -19,18 +34,12 @@ const QuestionBox = (props) => {
             console.log("This is the incorrect answer!")
             setShowIncorrect(true)
         }
-        // Show Results
-        setChoiceClass0("incorrect-choice")
-        setChoiceClass1("incorrect-choice")
-        setChoiceClass2("incorrect-choice")
 
-        if (props.question.correct === 0) {
-            setChoiceClass0("correct-choice")
-        } else if (props.question.correct === 1) {
-            setChoiceClass1("correct-choice")
-        } else if (props.question.correct === 2) {
-            setChoiceClass2("correct-choice")
-        }
+        // Wait 5 seconds for answer review
+        await new Promise(r => setTimeout(r, 2000));
+        // Move to Next Question
+        props.changeQuestion();
+
     };
 
     var question_choices = [];
