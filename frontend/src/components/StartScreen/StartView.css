@@ -1,0 +1,37 @@
+#start-button {
+    text-align:center;
+    justify-content: center;
+    background-color:lightgrey;
+    font-weight:bold;
+    text-transform:uppercase;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    padding:0.5em;
+    display:flex;
+    width:auto;
+    vertical-align:middle;
+}
+
+#start-button:hover{
+    background-color:limegreen;
+    color:white;
+    cursor:pointer;
+}
+
+#start-text {
+    font-size:2.3rem;
+    letter-spacing:0.1em;
+    padding:0.3em;
+}
+
+#play-image {
+    background-image: url(https://i3.lensdump.com/i/g9Mn0x.png);
+    background-size: 3em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-align:center;
+    height:4em;
+    width:4em;
+    margin:auto;
+}

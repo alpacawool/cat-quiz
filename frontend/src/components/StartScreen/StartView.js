@@ -1,11 +1,15 @@
 import React from 'react';
+import './StartView.css';
 
 const StartView = (props) => {
 
     return(
         <div>
             <h1>Cat Breed Quiz</h1>
-            <button onClick={props.clickHandler}>Start</button>
+            <div id="start-button" onClick={props.clickHandler}>
+                <div id="start-text">Start</div>
+                <div id="play-image"></div>
+            </div>
         </div>
     );
 };
