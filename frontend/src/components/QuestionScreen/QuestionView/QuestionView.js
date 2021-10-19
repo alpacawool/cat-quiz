@@ -6,10 +6,11 @@ const QuestionView = (props) => {
 
     function moveToNextQuestion(isCorrect) {
         if (currentQuestion === props.questions.length - 1) {
-            console.log("You have reached the end of the questions")
-            // Show results?
+            console.log("You have reached the end of the questions");
+            props.goReplay();
+            setCurrentQuestion(0);
         } else {
-            setCurrentQuestion(currentQuestion+1)
+            setCurrentQuestion(currentQuestion+1);
         }
     }
 

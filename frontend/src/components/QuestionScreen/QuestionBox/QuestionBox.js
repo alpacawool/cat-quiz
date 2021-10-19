@@ -36,6 +36,7 @@ const QuestionBox = (props) => {
         }
 
         // Wait 5 seconds for answer review
+        // https://stackoverflow.com/questions/951021/
         await new Promise(r => setTimeout(r, 2000));
         // Move to Next Question
         props.changeQuestion();
