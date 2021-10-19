@@ -41,6 +41,15 @@ test_questions = [
         "Himalayan",
         0,
         "https://upload.wikimedia.org/wikipedia/en/7/70/Norwegian_Forest_Cat_in_snow_%28closeup%29_%28cropped%29.jpg"
+    ),
+    Question(
+        2,
+        "What cat breed is this?",
+        "Egyptian Mau",
+        "Bengal",
+        "Russian Blue",
+        0,
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1024px-Egyptian_Mau_Bronze.jpg"
     )
 
 ]

@@ -16,7 +16,13 @@ const App = () => {
   // Questions data
   const [questions, setQuestions] = useState({});
 
+  // Score data
+  const [score, setScore] = useState(0);
+
+  // Change Screens
   function startQuizClickHandler() {
+    // Reset Score
+    setScore(0)
     setShowStart(false);
     setShowReplay(false)
     setShowQuiz(true);
@@ -34,6 +40,12 @@ const App = () => {
     setShowQuiz(false);
   }
 
+  // Score handling
+  function increaseScore() {
+    setScore(score + 10);
+  }
+
+
   useEffect(() => {
     fetch('/get-questions').then(res => res.json()).then(data => {
       setQuestions(data.questions)
@@ -44,8 +56,13 @@ const App = () => {
     <div className="App">
 
         { showStart ? <StartView clickHandler = {startQuizClickHandler}/> : null }
-        { showQuiz ? <QuestionView questions={questions} goReplay={goToReplayScreen} /> : null }
-        { showReplay ? <ReplayView clickHandler = {replayClickHandler} /> : null }
+        { showQuiz ? <QuestionView 
+          questions={questions} 
+          goReplay={goToReplayScreen} 
+          increaseScore={increaseScore} 
+          score={score}
+          /> : null }
+        { showReplay ? <ReplayView clickHandler = {replayClickHandler} score={score}/> : null }
 
     </div>
   );

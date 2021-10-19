@@ -3,6 +3,8 @@ import QuestionChoice from '../QuestionChoice/QuestionChoice';
 import CorrectBox from '../CorrectBox/CorrectBox';
 import IncorrectBox from '../IncorrectBox/IncorrectBox';
 
+import './QuestionBox.css'
+
 const QuestionBox = (props) => {
 
     const [choiceClass0, setChoiceClass0] = useState("");
@@ -30,16 +32,20 @@ const QuestionBox = (props) => {
         if (props.question.correct === key) {
             console.log("This is the correct answer!")
             setShowCorrect(true)
+            // Wait 5 seconds for answer review
+            // https://stackoverflow.com/questions/951021/
+            await new Promise(r => setTimeout(r, 2000));
+            // Move to Next Question
+            props.changeQuestion(true);
         } else {
             console.log("This is the incorrect answer!")
             setShowIncorrect(true)
+            await new Promise(r => setTimeout(r, 2000));
+            // Move to Next Question
+            props.changeQuestion(false);
         }
 
-        // Wait 5 seconds for answer review
-        // https://stackoverflow.com/questions/951021/
-        await new Promise(r => setTimeout(r, 2000));
-        // Move to Next Question
-        props.changeQuestion();
+
 
     };
 
@@ -74,10 +80,13 @@ const QuestionBox = (props) => {
 
     return (
         <div>
-            <b>{props.question.title}</b>
+            <div align="center">{props.question.title}</div>
+            <img id="question-image" src={props.question.image} alt="cat"/>
             {question_choices}
             { showCorrect ? <CorrectBox /> : null }
             { showIncorrect ? <IncorrectBox /> : null }
+          
+            
         </div>
     );
 
