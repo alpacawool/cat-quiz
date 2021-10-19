@@ -56,13 +56,13 @@ const QuestionBox = (props) => {
             setShowCorrect(true)
             // Wait 5 seconds for answer review
             // https://stackoverflow.com/questions/951021/
-            await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 4000));
             // Move to Next Question
             props.changeQuestion(true);
         } else {
             // Incorrect Answer
             setShowIncorrect(true)
-            await new Promise(r => setTimeout(r, 2000));
+            await new Promise(r => setTimeout(r, 4000));
             // Move to Next Question
             props.changeQuestion(false);
         }
@@ -106,9 +106,7 @@ const QuestionBox = (props) => {
             <img id="question-image" src={props.question.image} alt="cat"/>
             {question_choices}
             { showCorrect ? <CorrectBox /> : null }
-            { showIncorrect ? <IncorrectBox /> : null }
-          
-            
+            { showIncorrect ? <IncorrectBox /> : null } 
         </div>
     );
 
