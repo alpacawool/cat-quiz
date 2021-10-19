@@ -50,6 +50,15 @@ test_questions = [
         "Russian Blue",
         0,
         "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1024px-Egyptian_Mau_Bronze.jpg"
+    ),
+    Question(
+        3,
+        "What cat breed is this?",
+        "Manx",
+        "Ragdoll",
+        "Japanese Bobtail",
+        2,
+        "https://upload.wikimedia.org/wikipedia/commons/5/56/JapaneseBobtailBlueEyedMi-ke.JPG"
     )
 
 ]

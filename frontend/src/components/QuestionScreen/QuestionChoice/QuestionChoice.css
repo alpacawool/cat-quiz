@@ -6,12 +6,32 @@
     padding:0.5em;
 }
 
+.single-choice-bg {
+    background-color:lightgrey;
+}
+
+.single-choice-bg:hover {
+    background-color:rgb(53, 53, 53);
+    color:white;
+    cursor:pointer;
+}
+
 .incorrect-choice {
     background-color: lightcoral;
 }
 
+.incorrect-choice-select {
+    background-color: darkred;
+    color:white;
+}
+
 .correct-choice {
     background-color: lightgreen;
+}
+
+.correct-choice-select {
+    background-color: darkgreen;
+    color:white;
 }
 
 /* https://stackoverflow.com/questions/44719980/ */

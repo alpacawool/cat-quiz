@@ -7,9 +7,9 @@ import './QuestionBox.css'
 
 const QuestionBox = (props) => {
 
-    const [choiceClass0, setChoiceClass0] = useState("");
-    const [choiceClass1, setChoiceClass1] = useState("");
-    const [choiceClass2, setChoiceClass2] = useState("");
+    const [choiceClass0, setChoiceClass0] = useState("single-choice-bg");
+    const [choiceClass1, setChoiceClass1] = useState("single-choice-bg");
+    const [choiceClass2, setChoiceClass2] = useState("single-choice-bg");
     const [showCorrect, setShowCorrect] = useState(0);
     const [showIncorrect, setShowIncorrect] = useState(0);
  
@@ -17,20 +17,42 @@ const QuestionBox = (props) => {
     async function choiceClickHandler(key) {
 
         // Show Results
-        setChoiceClass0("incorrect-choice no-click")
-        setChoiceClass1("incorrect-choice no-click")
-        setChoiceClass2("incorrect-choice no-click")
+        setChoiceClass0("incorrect-choice no-click");
+        setChoiceClass1("incorrect-choice no-click");
+        setChoiceClass2("incorrect-choice no-click");
 
+        console.log("Selected: ", key);
         if (props.question.correct === 0) {
-            setChoiceClass0("correct-choice no-click")
+            if (key === props.question.correct) {
+                setChoiceClass0("correct-choice-select no-click")
+            } else {
+                setChoiceClass0("correct-choice no-click")
+            }
         } else if (props.question.correct === 1) {
-            setChoiceClass1("correct-choice no-click")
+            if (key === props.question.correct) {
+                setChoiceClass1("correct-choice-select no-click")
+            } else {
+                setChoiceClass1("correct-choice no-click")
+            }
         } else if (props.question.correct === 2) {
-            setChoiceClass2("correct-choice no-click")
+            if (key === props.question.correct) {
+                setChoiceClass2("correct-choice-select no-click")
+            } else {
+                setChoiceClass2("correct-choice no-click")
+            }
         }
+        if (props.question.correct !== key && key === 0) {
+            setChoiceClass0("incorrect-choice-select no-click");
+        } else if (props.question.correct !== key && key === 1) {
+            setChoiceClass1("incorrect-choice-select no-click");
+        } else if (props.question.correct !== key && key === 2) {
+            setChoiceClass2("incorrect-choice-select no-click");
+        } 
+
+
 
         if (props.question.correct === key) {
-            console.log("This is the correct answer!")
+            // Correct Answer
             setShowCorrect(true)
             // Wait 5 seconds for answer review
             // https://stackoverflow.com/questions/951021/
@@ -38,7 +60,7 @@ const QuestionBox = (props) => {
             // Move to Next Question
             props.changeQuestion(true);
         } else {
-            console.log("This is the incorrect answer!")
+            // Incorrect Answer
             setShowIncorrect(true)
             await new Promise(r => setTimeout(r, 2000));
             // Move to Next Question
