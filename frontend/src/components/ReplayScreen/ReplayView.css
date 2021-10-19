@@ -1,0 +1,47 @@
+#replay-div {
+    text-align:center;
+}
+
+#score-text {
+    font-weight:bold;
+    font-size:5em;
+    margin:0;
+}
+
+#replay-button {
+    text-align:center;
+    justify-content: center;
+    background-color:lightgrey;
+    font-weight:bold;
+    text-transform:uppercase;
+    border: 2px solid black;
+    border-radius: 0.5em;
+    margin: 0.5em;
+    padding:0.5em;
+    display:flex;
+    width:auto;
+    vertical-align:middle;
+}
+
+#replay-button:hover{
+    background-color:palevioletred;
+    color:white;
+    cursor:pointer;
+}
+
+#replay-text {
+    font-size:2.3rem;
+    letter-spacing:0.1em;
+    padding:0.5em;
+}
+
+#replay-image {
+    background-image: url(https://i2.lensdump.com/i/g9MY2c.png);
+    background-size: 3em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-align:center;
+    height:4em;
+    width:4em;
+    padding: 0.3em;
+}
