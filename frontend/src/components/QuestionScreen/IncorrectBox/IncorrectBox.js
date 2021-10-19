@@ -1,8 +1,9 @@
 import React from 'react'
+import './IncorrectBox.css'
 
 const IncorrectBox = () => {
     return(
-        <div>Sorry, Incorrect</div>
+        <div id="incorrect-div">Sorry, Incorrect</div>
     );
 }
 

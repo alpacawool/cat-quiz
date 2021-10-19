@@ -102,7 +102,7 @@ const QuestionBox = (props) => {
 
     return (
         <div>
-            <div align="center">{props.question.title}</div>
+            <div id="question-title">{props.question.title}</div>
             <img id="question-image" src={props.question.image} alt="cat"/>
             {question_choices}
             { showCorrect ? <CorrectBox /> : null }

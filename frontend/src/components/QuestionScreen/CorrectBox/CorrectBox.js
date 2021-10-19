@@ -1,8 +1,9 @@
 import React from 'react'
+import './CorrectBox.css'
 
 const CorrectBox = () => {
     return(
-        <div>Correct!</div>
+        <div id="correct-div">Correct!</div>
     );
 }
 
