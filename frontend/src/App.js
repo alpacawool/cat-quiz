@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import StartView from './components/StartScreen/StartView';
 import QuestionView from './components/QuestionScreen/QuestionView/QuestionView';
 import ReplayView from './components/ReplayScreen/ReplayView';
+import TutorialView from './components/TutorialScreen/TutorialView';
 
 import './App.css';
 
@@ -12,6 +13,7 @@ const App = () => {
   const [showStart, setShowStart] = useState(1);
   const [showQuiz, setShowQuiz] = useState(0);
   const [showReplay, setShowReplay] = useState(0);
+  const [showTutorial, setShowTutorial] = useState(0);
 
   // Questions data
   const [questions, setQuestions] = useState({});
@@ -40,6 +42,16 @@ const App = () => {
     setShowQuiz(false);
   }
 
+  function tutorialClickHandler() {
+    setShowStart(false);
+    setShowTutorial(true);
+  }
+
+  function backToStartFromTutorial() {
+    setShowStart(true);
+    setShowTutorial(false);
+  }
+
   // Score handling
   function increaseScore() {
     setScore(score + 10);
@@ -55,7 +67,7 @@ const App = () => {
   return (
     <div className="App">
 
-        { showStart ? <StartView clickHandler = {startQuizClickHandler}/> : null }
+        { showStart ? <StartView clickHandler = {startQuizClickHandler} clickHandlerTut = {tutorialClickHandler}/> : null }
         { showQuiz ? <QuestionView 
           questions={questions} 
           goReplay={goToReplayScreen} 
@@ -63,6 +75,7 @@ const App = () => {
           score={score}
           /> : null }
         { showReplay ? <ReplayView clickHandler = {replayClickHandler} score={score}/> : null }
+        { showTutorial ? <TutorialView clickHandler = {backToStartFromTutorial} /> : null }
 
     </div>
   );

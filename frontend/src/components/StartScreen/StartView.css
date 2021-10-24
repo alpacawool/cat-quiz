@@ -1,4 +1,4 @@
-#start-button {
+#start-button, #tutorial-button {
     text-align:center;
     justify-content: center;
     background-color:lightgrey;
@@ -19,6 +19,12 @@
     cursor:pointer;
 }
 
+#tutorial-button:hover{
+    background-color:darkslateblue;
+    color:white;
+    cursor:pointer;
+}
+
 #start-text {
     font-size:2.3rem;
     letter-spacing:0.1em;
@@ -35,3 +41,5 @@
     width:4em;
     margin:auto;
 }
+
+

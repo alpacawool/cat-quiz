@@ -10,6 +10,7 @@ const StartView = (props) => {
                 <div id="start-text">Start</div>
                 <div id="play-image"></div>
             </div>
+            <div id="tutorial-button" onClick={props.clickHandlerTut}>Tutorial</div>
         </div>
     );
 };
