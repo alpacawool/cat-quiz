@@ -6,7 +6,7 @@ class Question():
         self.answer_1 = answer_1
         self.answer_2 = answer_2
         self.correct = correct
-        self.image = 'https://upload.wikimedia.org/wikipedia/commons/5/56/JapaneseBobtailBlueEyedMi-ke.JPG'
+        self.image = ''
     
     # Serialize object to pass in Flask
     # Based on https://stackoverflow.com/questions/21411497/
@@ -24,9 +24,6 @@ class Question():
     # Setter for image url of question
     def setImage(self, new_image):
         self.image = new_image
-
-
-
 
 test_questions = [
     Question(
