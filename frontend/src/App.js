@@ -67,15 +67,20 @@ const App = () => {
   return (
     <div className="App">
 
-        { showStart ? <StartView clickHandler = {startQuizClickHandler} clickHandlerTut = {tutorialClickHandler}/> : null }
+        { showStart ? <StartView 
+          clickHandler = {startQuizClickHandler} 
+          clickHandlerTut = {tutorialClickHandler}/> 
+          : null }
         { showQuiz ? <QuestionView 
           questions={questions} 
           goReplay={goToReplayScreen} 
           increaseScore={increaseScore} 
           score={score}
           /> : null }
-        { showReplay ? <ReplayView clickHandler = {replayClickHandler} score={score}/> : null }
-        { showTutorial ? <TutorialView clickHandler = {backToStartFromTutorial} /> : null }
+        { showReplay ? <ReplayView 
+          clickHandler = {replayClickHandler} score={score}/> : null }
+        { showTutorial ? <TutorialView 
+          clickHandler = {backToStartFromTutorial} /> : null }
 
     </div>
   );

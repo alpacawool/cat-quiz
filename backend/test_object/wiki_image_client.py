@@ -1,6 +1,5 @@
 # Based code from https://www.cloudamqp.com/docs/python.html
 # and https://www.rabbitmq.com/tutorials/tutorial-six-python.html
-# publish.py
 import pika, os, ssl, json, uuid
 from dotenv import load_dotenv
 
@@ -57,9 +56,3 @@ class WikiClient(object):
         image_response = (json.loads(self.call(json.dumps(message))))
         print(image_response)
         return image_response["image_url"]
-        
-
-# # Test request
-# wiki_client = WikiClient()
-# wiki_client.retrieve_image_url('Japanese_Bobtail')
-# wiki_client.retrieve_image_url('Persian_Cat')

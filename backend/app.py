@@ -26,9 +26,9 @@ def assign_wiki_images(question_list):
         "Japanese_Bobtail"
     ]
     # Make a query for each image
-    for i in range(0, len(question_list)):
-        new_image = wiki_client.retrieve_image_url(queries[i])
-        question_list[i].setImage(new_image)
+    for image in range(0, len(question_list)):
+        new_image = wiki_client.retrieve_image_url(queries[image])
+        question_list[image].setImage(new_image)
 
 
     
